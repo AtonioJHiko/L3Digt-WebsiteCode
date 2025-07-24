@@ -2,18 +2,43 @@ body {
     background-color: beige;
 }
 
+
 .container {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 2fr 2fr 2fr 2fr ;
     grid-template-areas:
+        "title title title title"
+        "navbar navbar navbar navbar"
         "first first first first"
         "second_one second_one second_two second_two"
         "third_one third_two third_three third_three"
         "fourth_one fourth_two fourth_three fourth_four";
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
 }
 
+.title {
+    grid-area: title;
+    background-color:  blanchedalmond;
+    text-align: center;
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.9;
+    padding: 1px 0;
+}
 
+.navbar {
+    grid-area: navbar;
+    background-color:  blanchedalmond;
+    text-align: center;
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.9;
+    padding: 1px 0;
+}
+ 
 .first {
     grid-area: first;
     border: 1px solid #000000;
