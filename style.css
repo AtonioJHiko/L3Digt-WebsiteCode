@@ -1,0 +1,75 @@
+body {
+    background-color: beige;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 2fr 2fr 2fr 2fr ;
+    grid-template-areas:
+        "first first first first"
+        "second_one second_one second_two second_two"
+        "third_one third_two third_three third_three"
+        "fourth_one fourth_two fourth_three fourth_four";
+}
+
+
+.first {
+    grid-area: first;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+ 
+.second_one {
+    grid-area: second_one;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.second_two {
+    grid-area: second_two;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.third_one {
+    grid-area: third_one;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.third_two {
+    grid-area: third_two;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.third_three {
+    grid-area: third_three;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.fourth_one {
+    grid-area: fourth_one;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.fourth_two {
+    grid-area: fourth_two;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.fourth_three {
+    grid-area: fourth_three;
+    border: 1px solid #000000;
+    padding: 50px;
+}
+
+.fourth_four {
+    grid-area: fourth_four;
+    border: 1px solid #000000;
+    padding: 50px;
+}
