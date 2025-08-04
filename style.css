@@ -1,104 +1,129 @@
-body {
-    background-color: beige;
+/* 1. Add CSS variables for colors and spacing */
+:root {
+    --primary-bg: beige;
+    --accent-bg: #bbdefb;
+    --card-bg: #ffffff;
+    --card-radius: 16px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --section-padding: 32px;
+    --title-bg: blanchedalmond;
+    --text-color: #263238;
 }
 
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+/* 2. Container grid layout for desktop */
 .container {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 2fr 2fr 2fr 2fr ;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
     grid-template-areas:
         "title title title title"
         "navbar navbar navbar navbar"
-        "first first first first"
-        "second_one second_one second_two second_two"
-        "third_one third_two third_three third_three"
-        "fourth_one fourth_two fourth_three fourth_four";
-            gap: 15px;
-            max-width: 1200px;
-            margin: 0 auto;
+        "welcome welcome welcome welcome";
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 .title {
     grid-area: title;
-    background-color:  blanchedalmond;
+    background-color: var(--title-bg);
     text-align: center;
     overflow: auto;
     font-family: 'Roboto', sans-serif;
     opacity: 0.9;
-    padding: 1px 0;
+    padding: 16px 0;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
 }
 
 .navbar {
     grid-area: navbar;
-    background-color:  blanchedalmond;
+    background-color: var(--title-bg);
     text-align: center;
     overflow: auto;
     font-family: 'Roboto', sans-serif;
     opacity: 0.9;
-    padding: 1px 0;
+    padding: 8px 0;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
 }
 
 .navbar ul {
     list-style-type: none;
-}
- 
-.first {
-    grid-area: first;
-    border: 1px solid #000000;
-    padding: 50px;
-}
- 
-.second_one {
-    grid-area: second_one;
-    border: 1px solid #000000;
-    padding: 50px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
 }
 
-.second_two {
-    grid-area: second_two;
-    border: 1px solid #000000;
-    padding: 50px;
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.2s;
 }
 
-.third_one {
-    grid-area: third_one;
-    border: 1px solid #000000;
-    padding: 50px;
+.navbar a:hover {
+    background: var(--accent-bg);
 }
 
-.third_two {
-    grid-area: third_two;
-    border: 1px solid #000000;
-    padding: 50px;
+.welcome {
+    grid-area: welcome;
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 24px;
 }
 
-.third_three {
-    grid-area: third_three;
-    border: 1px solid #000000;
-    padding: 50px;
+section {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    padding: var(--section-padding);
 }
 
-.fourth_one {
-    grid-area: fourth_one;
-    border: 1px solid #000000;
-    padding: 50px;
+section h2 {
+    margin-top: 0;
+    color: #1976d2;
 }
 
-.fourth_two {
-    grid-area: fourth_two;
-    border: 1px solid #000000;
-    padding: 50px;
+section ul {
+    padding-left: 20px;
 }
 
-.fourth_three {
-    grid-area: fourth_three;
-    border: 1px solid #000000;
-    padding: 50px;
-}
-
-.fourth_four {
-    grid-area: fourth_four;
-    border: 1px solid #000000;
-    padding: 50px;
+/* 3. Responsive design for tablets and phones */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "navbar"
+            "welcome";
+        padding: 0 8px;
+        max-width: 100%;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .title,
+    .navbar,
+    .welcome,
+    section {
+        padding: 12px;
+    }
 }
