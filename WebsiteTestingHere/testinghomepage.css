@@ -1,0 +1,117 @@
+:root {
+    --primary-bg: #e3f2fd;
+    --accent-bg: #bbdefb;
+    --card-bg: #ffffff;
+    --border-color: #90caf9;
+    --text-color: #263238;
+    --header-bg: #ffe0b2;
+    --section-padding: 32px;
+    --card-radius: 16px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+header.title {
+    background: var(--header-bg);
+    border-radius: var(--card-radius);
+    text-align: center;
+    padding: 32px 0 16px 0;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    opacity: 0.97;
+}
+
+header.title h1 {
+    font-size: 2.7rem;
+    margin-bottom: 8px;
+}
+
+header.title p {
+    font-size: 1.2rem;
+    color: #6d4c41;
+    margin: 0;
+}
+
+.navbar {
+    background: var(--header-bg);
+    border-radius: var(--card-radius);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    opacity: 0.97;
+    padding: 8px 0;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.navbar a:hover {
+    background: var(--accent-bg);
+}
+
+section {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    padding: var(--section-padding);
+}
+
+section.hero {
+    background: linear-gradient(90deg, #bbdefb 0%, #e3f2fd 100%);
+    text-align: center;
+    padding: 40px 16px;
+}
+
+section h2, section h3 {
+    margin-top: 0;
+    color: #1976d2;
+}
+
+section ul {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+    section {
+        padding: 18px;
+    }
+    header.title {
+        padding: 18px 0 8px 0;
+    }
+}
