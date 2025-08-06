@@ -1,6 +1,6 @@
 /* 1. Add CSS variables for colors and spacing */
 :root {
-    --primary-bg: beige;
+    --primary-bg: #e3f2fd;
     --accent-bg: #bbdefb;
     --card-bg: #ffffff;
     --card-radius: 16px;
@@ -26,7 +26,9 @@ body {
     grid-template-areas:
         "title title title title"
         "navbar navbar navbar navbar"
-        "welcome welcome welcome welcome";
+        "welcome welcome welcome welcome"
+        "inserttexthere inserttexthere inserttexthere inserttexthere"
+        "inserttextpart2 inserttextpart2 inserttextpart2 inserttextpart2";
     gap: 15px;
     max-width: 1200px;
     margin: 0 auto;
@@ -81,6 +83,23 @@ body {
 
 .welcome {
     grid-area: welcome;
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.inserttexthere {
+    grid-area: inserttexthere;
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+}
+
+.inserttextpart2 {
+    grid-area: inserttextpart2;
     background: var(--card-bg);
     border-radius: var(--card-radius);
     box-shadow: var(--shadow);
