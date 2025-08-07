@@ -24,6 +24,22 @@ body {
     padding: 0 16px;
 }
 
+/* Styles for the GIF container */
+#gif-container {
+    display: flex;              /* Use flexbox to center content */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically (if container has height) */
+    margin-bottom: 24px;        /* Space below the GIF */
+}
+
+/* Responsive GIF image */
+.responsive-gif {
+    max-width: 100%;            /* GIF will never be wider than its container */
+    height: auto;               /* Height adjusts to keep aspect ratio */
+    border-radius: 16px;        /* Rounded corners for a friendly look */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07); /* Soft shadow for depth */
+}
+
 header.title {
     background: var(--header-bg);
     border-radius: var(--card-radius);

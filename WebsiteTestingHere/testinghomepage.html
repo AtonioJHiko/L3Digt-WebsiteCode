@@ -23,6 +23,11 @@
             </ul>
         </nav>
 
+
+        <!-- Add this inside your .container, for example after the navbar -->
+        <div id="gif-container"></div>
+
+
         <section class="hero">
             <h2>Welcome!</h2>
             <p>Discover tools, tips, and support for your mental wellbeing. You are not alone.</p>
@@ -47,6 +52,28 @@
             <h3>Need Support?</h3>
             <p>Contact our team or join our community forums for advice and encouragement.</p>
         </section>
+
+        <script>
+        // This JavaScript runs after the page loads
+        window.onload = function() {
+            // Find the div with id "gif-container"
+            var container = document.getElementById('gif-container');
+            
+            // Create a new image element
+            var gif = document.createElement('img');
+            
+            // Set the image source to your GIF URL
+            gif.src = 'https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'; // Example GIF
+            
+            // Add a CSS class for styling
+            gif.className = 'responsive-gif';
+            gif.alt = 'Moving GIF'; // Accessibility: describes the image
+            
+            // Put the image inside the container
+            container.appendChild(gif);
+        };
+        </script>
+
     </div>
 </body>
 </html>
