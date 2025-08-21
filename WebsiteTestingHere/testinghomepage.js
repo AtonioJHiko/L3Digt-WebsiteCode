@@ -1,89 +1,146 @@
 // ------------------------------
-// Expand/Collapse Paragraph
+// Expand / Collapse (Read More)
 // ------------------------------
-// This function shows or hides the extra text.
-// We use 'element' to toggle a CSS class called "expanded".
-function toggleExpand(element) {
-    element.classList.toggle('expanded'); 
+
+/* 
+Function: toggleExpand(button)
+- Called whenever a "Read More" button is clicked.
+- It shows or hides the extra text directly after the button.
+
+Think of this like a light switch:
+→ If the text is hidden, turn it on.
+→ If it’s visible, turn it off.
+*/
+function toggleExpand(button) {
+    /*
+    nextElementSibling → finds the element that comes right 
+    after this button in the HTML.
+
+    Why? → So we don’t have to hard-code IDs for every section.
+            The function will work on ANY "Read More" button.
+    */
+    const moreText = button.nextElementSibling;
+
+    /*
+    If the text is already shown, hide it again.
+    Otherwise, show it.
+    */
+    if (moreText.style.display === "inline") {
+        moreText.style.display = "none";       // Hide text
+        button.textContent = "Read More";      // Reset label
+
+        // 🔍 TEST: In browser DevTools console, type:
+        // document.querySelector("button").click()
+        // → Button should toggle itself off.
+    } else {
+        moreText.style.display = "inline";     // Show text
+        button.textContent = "Read Less";      // Update label
+
+        // 🔍 TEST: Add multiple "Read More" buttons in HTML.
+        // Each should work independently because of nextElementSibling.
+    }
 }
 
+// ------------------------------
+// Run after the page fully loads
+// ------------------------------
+
+/*
+Why DOMContentLoaded?
+- The browser reads HTML top to bottom.
+- If JavaScript runs *before* HTML is ready, it fails (because 
+  it can’t find elements yet).
+- This event waits until the HTML "blueprint" is fully built.
+*/
 document.addEventListener("DOMContentLoaded", function() {
 
     // ------------------------------
-    // Tooltip Logic
+    // Tooltip Example
     // ------------------------------
-    // Tooltips are little hover boxes.
-    // Here we fill in the hidden span with a definition.
+
     const tooltip = document.querySelector('.tooltiptext');
+
     if (tooltip) {
         tooltip.textContent = "An example is something that represents a group or category.";
+
+        // 🔍 TEST: Hover over tooltip text on page.
+        // In console: tooltip.textContent → should show updated string.
     }
 
     // ------------------------------
     // Carousel (Image Slideshow)
     // ------------------------------
-    let slideIndex = 0; // Keeps track of which image is showing
-    const slides = document.querySelectorAll('.carousel-slide img'); // Select all images
-    const prevBtn = document.querySelector('.prev'); // Left button
-    const nextBtn = document.querySelector('.next'); // Right button
-    const carouselContainer = document.querySelector('.carousel-container'); // Whole slideshow area
-    let autoSlideInterval; // Timer for automatic slide change
 
-    // Function: Show the current slide with fade effect
+    let slideIndex = 0;  // Keep track of current slide
+    const slides = document.querySelectorAll('.carousel-slide img'); // All images
+    const prevBtn = document.querySelector('.prev'); // Previous button
+    const nextBtn = document.querySelector('.next'); // Next button
+    let autoSlideInterval; // Will hold the auto-rotation timer
+
+    /*
+    Function: showSlide(n)
+    - Makes only one slide visible (at index n).
+    - Hides all others.
+    */
     function showSlide(n) {
-        if (slides.length === 0) return;
+        if (slides.length === 0) return;  // Exit if no slides exist
 
-        // Wrap around if index goes out of range
+        // Wrap around logic (loop back to start/end)
         if (n >= slides.length) slideIndex = 0;
         if (n < 0) slideIndex = slides.length - 1;
 
-        // Hide all slides first
-        slides.forEach(slide => {
-            slide.style.display = "none";
-            slide.style.opacity = 0; // invisible
-        });
+        slides.forEach(slide => slide.style.display = "none"); // Hide all
+        slides[slideIndex].style.display = "block";            // Show one
 
-        // Show the current slide
-        slides[slideIndex].style.display = "block";
-        setTimeout(() => {
-            slides[slideIndex].style.opacity = 1; // fade in
-        }, 50);
+        // 🔍 TEST: In console:
+        // slideIndex = 2; showSlide(slideIndex);
+        // → Jumps straight to 3rd image.
     }
 
-    // Function: Move to next or previous slide
+    /*
+    Function: moveSlide(n)
+    - Move forward/back by n.
+    - Example: moveSlide(1) = next slide, moveSlide(-1) = previous.
+    */
     function moveSlide(n) {
         slideIndex += n;
         showSlide(slideIndex);
         resetAutoSlide();
+
+        // 🔍 TEST: Click next/prev buttons OR:
+        // moveSlide(-1) in console → moves back.
     }
 
-    // Function: Automatically show next slide
+    /*
+    Function: autoSlide()
+    - Automatically goes to next slide.
+    */
     function autoSlide() {
         slideIndex++;
         showSlide(slideIndex);
     }
 
-    // Function: Reset auto-slide timer
+    /*
+    Function: resetAutoSlide()
+    - Clears old timer, starts a new one.
+    - Prevents slideshow from instantly skipping right after you click.
+    */
     function resetAutoSlide() {
         clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(autoSlide, 3000); // 3 sec
+        autoSlideInterval = setInterval(autoSlide, 3000); // 3s interval
     }
 
-    // ------------------------------
-    // Attach Event Listeners
-    // ------------------------------
+    // Hook up buttons
     if (prevBtn) prevBtn.addEventListener("click", () => moveSlide(-1));
     if (nextBtn) nextBtn.addEventListener("click", () => moveSlide(1));
 
-    // Pause slideshow when hovering, resume when leaving
-    if (carouselContainer) {
-        carouselContainer.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
-        carouselContainer.addEventListener("mouseleave", resetAutoSlide);
-    }
-
-    // ------------------------------
-    // Start the carousel!
-    // ------------------------------
+    // Show the first slide immediately
     showSlide(slideIndex);
+
+    // Start auto slideshow
     autoSlideInterval = setInterval(autoSlide, 3000);
+
+    // 🔍 TEST IDEA: 
+    // In console: clearInterval(autoSlideInterval);
+    // → Stops autoplay. Then call resetAutoSlide() → starts again.
 });
