@@ -1,24 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Insert Title Name Here</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Understand Your Feelings</title>
+
+    <!-- Link to the shared CSS stylesheet -->
+    <link rel="stylesheet" href="page1.css">
 </head>
 <body>
-    <div class="container">
-        
-        <header class="title">
-            <h1>Insert Title Name Here</h1>
-            <p>Insert subtitle or description here</p>
-        </header>
 
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page1.html">Page 1</a></li>
-                <li><a href="page2.html">Page 2</a></li>
-                <li><a href="page3.html">Page 3</a></li>
-            </ul>
-        </nav>
+  <!-- ===============================
+                NAVIGATION BAR 
+       =============================== -->
+  <header class="navbar">
+    <img src="ImagesforMain/MentalWellnessLogo.png" alt="Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page1.html">Understand Your Feelings</a></li>
+        <li><a href="page2.html">Advice/Experiences</a></li>
+        <li><a href="page3.html" class="active">Get Help</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- ===============================
+         MAIN CONTENT AREA
+         =============================== -->
+    <main class="container">
+
+        <!-- SECTION 1: Title + Text (Left) and Image (Right) -->
+        <section class="intro-section">
+            <div class="intro-text">
+                <h2>Understand Your Feelings</h2>
+                <p>Insert text here. This section could introduce the purpose of the page, 
+                such as exploring emotions, understanding mental health, or identifying early 
+                signs of stress and anxiety.</p>
+
+                <p>Keep this section short and empathetic. You can expand it later 
+                when you add your real content.</p>
+            </div>
+
+            <div class="intro-image">
+                <img src="images/placeholder.jpg" alt="Main section image">
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- SECTION 2: 4 Image-Text Cards in Grid -->
+        <section class="card-grid">
+
+            <!-- Each card has an image and some text underneath -->
+            <div class="card">
+                <img src="images/example1.jpg" alt="Emotion awareness image">
+                <h3>Recognize Your Emotions</h3>
+                <p>Learn to identify what you’re feeling and why. 
+                   Understanding emotions helps you respond instead of react.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/example2.jpg" alt="Stress awareness image">
+                <h3>Dealing with Stress</h3>
+                <p>Simple ways to manage tension — through breathing, journaling, 
+                   or reaching out to someone you trust.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/example3.jpg" alt="Communication image">
+                <h3>Talking About It</h3>
+                <p>It’s okay to talk about how you feel. Sharing helps lighten the weight 
+                   and builds connection with others.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/example4.jpg" alt="Self-care image">
+                <h3>Finding Calm</h3>
+                <p>Explore healthy ways to unwind — like music, mindfulness, or nature walks.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===============================
+         FOOTER (Consistent Across Pages)
+         =============================== -->
+    <footer class="footer">
+        <p>Copyright © 2025 Mindful Wellbeing | All Rights Reserved</p>
+    </footer>
+
+
+</body>
+</html>
