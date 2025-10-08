@@ -1,148 +1,199 @@
-/* 1. Add CSS variables for colors and spacing */
+/* ===============================
+   Global Styling
+=============================== */
 :root {
-    --primary-bg: #e3f2fd;
-    --accent-bg: #bbdefb;
-    --card-bg: #ffffff;
-    --card-radius: 16px;
-    --shadow: 0 2px 12px rgba(0,0,0,0.07);
-    --section-padding: 32px;
-    --title-bg: blanchedalmond;
-    --text-color: #263238;
+    --primary: #1976d2;
+    --light: #f5f5f5;
+    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+    --radius: 10px;
 }
 
 body {
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* 2. Container grid layout for desktop */
-.container {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 2fr 2fr 2fr 2fr;
-    grid-template-areas:
-        "title title title title"
-        "navbar navbar navbar navbar"
-        "carousel-container carousel-container carousel-container carousel-container"
-        "welcome welcome welcome welcome"
-        "inserttexthere inserttexthere inserttextpart2 inserttextpart2";
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.title {
-    grid-area: title;
-    background-color: var(--title-bg);
-    text-align: center;
-    overflow: auto;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0.9;
-    padding: 16px 0;
-    border-radius: var(--card-radius);
-    box-shadow: var(--shadow);
-}
-
+/* ===============================
+   Navbar
+=============================== */
 .navbar {
-    grid-area: navbar;
-    background-color: var(--title-bg);
-    text-align: center;
-    overflow: auto;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0.9;
-    padding: 8px 0;
-    border-radius: var(--card-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--light);
     box-shadow: var(--shadow);
+}
+
+.logo {
+    width: 60px;
 }
 
 .navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 32px;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--primary);
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: background 0.2s;
+    transition: color 0.3s;
 }
 
-.navbar a:hover {
-    background: var(--accent-bg);
+.navbar a:hover, .navbar a.active {
+    color: black;
 }
 
-.welcome {
-    grid-area: welcome;
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
+/* ===============================
+   Hero Section
+=============================== */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--light);
+    border-bottom: 1px solid #ddd;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: var(--primary);
+}
+
+/* ===============================
+   Carousel
+=============================== */
+.carousel-container {
+    position: relative;
+    max-width: 1350px;
+    max-height: 500px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 24px;
-    margin-bottom: 24px;
 }
 
-.inserttexthere {
-    grid-area: inserttexthere;
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
+.carousel-slide img {
+    display: none;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+/* ===============================
+   Info Cards
+=============================== */
+.card {
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 24px;
+    padding: 20px;
 }
 
-.inserttextpart2 {
-    grid-area: inserttextpart2;
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
-    box-shadow: var(--shadow);
-    padding: 24px;
-    margin-bottom: 24px;
+.card-img {
+    width: 120px;
+    border-radius: var(--radius);
+    object-fit: cover;
 }
 
-section {
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 24px;
-    padding: var(--section-padding);
+.card-text button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-section h2 {
-    margin-top: 0;
-    color: #1976d2;
+.card-text button:hover {
+    background: #1565c0;
 }
 
-section ul {
-    padding-left: 20px;
+.more-text {
+    display: none;
+    margin-top: 10px;
+    color: #555;
 }
 
-/* 3. Responsive design for tablets and phones */
+/* ===============================
+   Tooltip
+=============================== */
+.tooltip {
+    position: relative;
+    color: var(--primary);
+    border-bottom: 1px dotted var(--primary);
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    width: 180px;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: var(--radius);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -90px;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===============================
+   Footer
+=============================== */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--light);
+    margin-top: 20px;
+}
+
+/* ===============================
+   Responsive Design
+=============================== */
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "title"
-            "navbar"
-            "welcome";
-        padding: 0 8px;
-        max-width: 100%;
-    }
     .navbar ul {
         flex-direction: column;
-        gap: 12px;
+        align-items: center;
     }
-    .title,
-    .navbar,
-    .welcome,
-    section {
-        padding: 12px;
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }

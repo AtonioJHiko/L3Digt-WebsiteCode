@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Insert Title Name Here</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Wellbeing</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation Bar -->
-        <header class="title">
-            <h1>Insert Title Name Here</h1>
-            <p>Insert subtitle or description here</p>
-        </header>
-
-        <nav class="navbar">
+    <!-- ===============================
+         NAVIGATION BAR
+    ================================== -->
+    <header class="navbar">
+        <img src="images/MentalWellnessLogo.png" alt="Logo" class="logo">
+        <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page1.html">Page 1</a></li>
-                <li><a href="page2.html">Page 2</a></li>
-                <li><a href="page3.html">Page 3</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Tips</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
+    </header>
 
-        <!-- Carousel Section -->
-        <section class="carousel-container">
-            <div class="carousel-slide">
-                <img src="images/mentalhealthimage.jpg" alt="Image 1">
-                <img src="images/mentalhealthimage2.jpg" alt="Image 2">
-                <img src="images/mentalhealthimage3.jpg" alt="Image 3">
-            </div>
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
-        </section>
+    <!-- ===============================
+         HERO / TITLE SECTION
+    ================================== -->
+    <section class="hero">
+        <h1>Mindful Wellbeing</h1>
+        <p>Your space for mental health support and resources.</p>
+    </section>
 
-        <!-- Information Section -->
-        <section class="welcome">
-            <h2>Insert Section Title Here</h2>
-            <h2>Welcome!</h2>
-            <p>Insert welcome message or introduction here.</p>
-        </section>
+    <!-- ===============================
+         IMAGE CAROUSEL
+    ================================== -->
+    <section class="carousel-container">
+        <div class="carousel-slide">
+            <img src="images/mentalhealthimage.jpg" alt="Image 1">
+            <img src="images/mentalhealthimage2.jpg" alt="Image 2">
+            <img src="images/mentalhealthimage3.jpg" alt="Image 3">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </section>
 
-        <section class="inserttexthere">
-            <h2>Insert Text Here</h2>
-            <p>Insert additional content or information here.</p>
-        </section>
+    <!-- ===============================
+         INFO CARDS
+    ================================== -->
+    <section class="card">
+        <img src="images/example1.jpg" alt="Person" class="card-img">
+        <div class="card-text">
+            <h3>Meet Sarah</h3>
+            <p>A student who learned mindfulness techniques to manage stress.</p>
+            <button onclick="toggleExpand(this)">Read More</button>
+            <span class="more-text">Sarah shares how small daily habits helped her balance school and wellbeing.</span>
+        </div>
+    </section>
 
-        <section class="inserttextpart2">
-            <h2>Insert Text Part 2</h2>
-            <p>Continue with more content or details as needed.</p>
-        </section>
+    <section class="card">
+        <img src="images/example2.jpg" alt="Person" class="card-img">
+        <div class="card-text">
+            <h3>Meet James</h3>
+            <p>James found that talking about his struggles helped him connect with others.</p>
+            <button onclick="toggleExpand(this)">Read More</button>
+            <span class="more-text">He now volunteers to support other students going through similar experiences.</span>
+        </div>
+    </section>
 
+    <!-- ===============================
+         TOOLTIP EXAMPLE
+    ================================== -->
+    <section class="tooltip-section">
+        <p>
+            Hover over the word 
+            <span class="tooltip">example
+                <span class="tooltiptext">An example is something that represents a group or category.</span>
+            </span> 
+            to see its definition.
+        </p>
+    </section>
 
-    </div>
+    <!-- ===============================
+         FOOTER
+    ================================== -->
+    <footer class="footer">
+        <p>Copyright © Mindful Wellbeing</p>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
