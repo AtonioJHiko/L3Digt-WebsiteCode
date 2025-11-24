@@ -116,12 +116,6 @@ button.next { right: 10px; }
     padding: 20px;
 }
 
-.card-img {
-    width: 120px;
-    border-radius: var(--radius);
-    object-fit: cover;
-}
-
 .card-text button {
     margin-top: 10px;
     padding: 6px 12px;
@@ -140,37 +134,6 @@ button.next { right: 10px; }
     display: none;
     margin-top: 10px;
     color: #555;
-}
-
-/* ===============================
-   Tooltip
-=============================== */
-.tooltip {
-    position: relative;
-    color: var(--primary);
-    border-bottom: 1px dotted var(--primary);
-    cursor: pointer;
-}
-
-.tooltiptext {
-    visibility: hidden;
-    opacity: 0;
-    width: 180px;
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 5px;
-    border-radius: var(--radius);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -90px;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
 }
 
 /* ===============================
