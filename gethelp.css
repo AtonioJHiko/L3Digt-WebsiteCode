@@ -115,7 +115,7 @@ h2, h3 {
     justify-content: space-between;
     align-items: center;
     /* Placeholder image for a background of comfort/hope */
-    background-image: url('ImagesforMain/comfort\ and\ hope.jpg'); 
+    background-image: url('ImagesforMain/comfortandhope.jpg'); 
     background-size: cover;
     background-position: top;
     border-radius: var(--radius);
