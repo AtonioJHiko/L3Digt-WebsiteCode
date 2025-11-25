@@ -1,15 +1,30 @@
 /* ===============================
-   GLOBAL STYLES
-   =============================== */
+    GLOBAL STYLES (Cleaned Variables)
+    =============================== */
 
 /* Define colours and rounded corners that match homepage */
 :root {
-    --primary: #1976d2;
-    --light: #f5f5f5;
-    --shadow: 0 4px 10px rgba(0,0,0,0.1);
-    --radius: 10px;
-    --text: #333;
-    --background: #e0edf3;
+    /* Merged primary color definitions */
+    --color-primary: #1976d2; /* Blue */
+    --color-light: #f5f5f5; /* Light Gray */
+    --color-text: #333; /* Dark Gray */
+    --color-background: #e0edf3; /* Light Blue/Gray */
+    --color-white: #fff;
+
+    /* Merged shadow definitions */
+    --shadow-default: 0 4px 10px rgba(0,0,0,0.1);
+    --shadow-hover: 0 8px 15px rgba(0,0,0,0.2); /* For card hover effect */
+    
+    /* Merged radius definitions */
+    --border-radius: 10px;
+
+    /* Keep old names for backward compatibility in the rest of the file */
+    --primary: var(--color-primary);
+    --light: var(--color-light);
+    --shadow: var(--shadow-default);
+    --radius: var(--border-radius);
+    --text: var(--color-text);
+    --background: var(--color-background);
 }
 
 body {
@@ -17,11 +32,31 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--background);
     color: var(--text);
+    line-height: 1.6; /* Added for better text readability */
+}
+
+/* Accessible utility class for screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Global headings improvement */
+h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
 }
 
 /* ===============================
-   NAVBAR
-   =============================== */
+    NAVBAR (Original styles retained)
+    =============================== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -61,9 +96,25 @@ body {
     color: black;
 }
 
+.menu-toggle {
+    display: none; 
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--color-primary, #1976D2); 
+    padding: 10px;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;  
+    gap: 20px;                 
+}
+
 /* ===============================
-   MAIN CONTENT STRUCTURE
-   =============================== */
+    MAIN CONTENT STRUCTURE (Original styles retained)
+    =============================== */
 .container {
     max-width: 1200px;
     margin: 40px auto;
@@ -83,50 +134,153 @@ body {
 
 .intro-text {
     flex: 1 1 400px;
+    font-size: 1.1em; /* Slight improvement for readability */
 }
 
-.intro-image {
+.intro-video {
     flex: 1 1 400px;
 }
 
-.intro-image img {
+/* Wrapper to make YouTube iframe responsive */
+.video-wrapper {
+    position: relative;
     width: 100%;
-    border-radius: var(--radius);
-    object-fit: cover;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
 }
 
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+
 /* ===============================
-   SECTION 2: Grid of Cards
-   =============================== */
+    SECTION 2: Grid of Cards 
+    =============================== */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    /* Forces a max of 2 columns on larger screens (minmax 450px ensures they are robust) */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 30px; 
     margin-top: 40px;
 }
 
 .card {
-    background: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 20px;
-    text-align: center;
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-default);
+    text-align: left; /* Left align for expanded text/lists */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    overflow: visible; /* CRUCIAL for showing tooltips outside card bounds */
+    display: flex;
+    flex-direction: column; /* Stacks image on top of content */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .card img {
     width: 100%;
-    border-radius: var(--radius);
+    height: 200px; 
     object-fit: cover;
+    /* Only round top corners so it blends with the card */
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* NEW CLASS for padding inside the card for neatness */
+.card-content {
+    padding: 25px;
+    flex-grow: 1; /* Ensures content fills space evenly */
+    display: flex;
+    flex-direction: column;
 }
 
 .card h3 {
-    color: var(--primary);
-    margin-top: 15px;
+    color: var(--color-primary);
+    margin-top: 0; /* Important since it's inside card-content */
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Styling for the lists inside cards */
+.card ul {
+    padding-left: 20px; 
+    margin: 0;
+}
+
+.card ul li {
+    margin-bottom: 12px;
+    font-size: 0.95em;
 }
 
 /* ===============================
-   FOOTER
-   =============================== */
+    Tooltip 
+    =============================== */
+.tooltip-trigger {
+    position: relative;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    cursor: help;
+    font-weight: bold;
+    display: inline-block; 
+}
+
+.tooltip-content {
+    visibility: hidden;
+    opacity: 0;
+    width: 220px; 
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    position: absolute;
+    bottom: 140%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    transition: opacity 0.3s, visibility 0.3s, bottom 0.3s;
+    font-weight: normal;
+    font-size: 0.9em;
+    z-index: 100; 
+    box-shadow: var(--shadow-hover);
+}
+
+/* Tooltip Arrow */
+.tooltip-content::after {
+    content: "";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-primary) transparent transparent transparent;
+}
+
+
+.tooltip-trigger:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+    bottom: 125%; /* Subtle animation effect on hover */
+}
+
+/* ===============================
+    FOOTER (Original styles retained)
+    =============================== */
 .footer {
     text-align: center;
     padding: 15px;
@@ -136,14 +290,56 @@ body {
 }
 
 /* ===============================
-   RESPONSIVE DESIGN TEST
-   ===============================
-   TESTING IN VS CODE:
-   - Resize browser window (or press Ctrl + Shift + M)
-   - Confirm that images stack vertically on small screens.
-   =============================== */
+    RESPONSIVE DESIGN 
+    =============================== */
+@media (max-width: 992px) {
+    .card-grid {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .intro-section {
         flex-direction: column;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* 1. Show the hamburger icon */
+    .menu-toggle {
+        display: block; 
+        order: 2; /* Pushes the icon to the right side if using flex */
+    }
+
+    /* 2. Style the menu list to act as a dropdown */
+    .nav-menu {
+        display: none !important; /* Hidden by default on small screens */
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        right: 0;
+        width: 100%;
+        background-color: var(--color-light, #F5F5F5); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    /* Show the menu when the 'active' class is added by JavaScript */
+    .nav-menu.active {
+        display: flex !important;
+    }
+    
+    .nav-menu li {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
     }
 }

@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function resetAutoSlide() {
         clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(autoSlide, 3000);
+        autoSlideInterval = setInterval(autoSlide, 10000);
     }
 
     if (prevBtn) prevBtn.addEventListener("click", () => moveSlide(-1));

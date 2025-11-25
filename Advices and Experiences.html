@@ -12,15 +12,20 @@
                 NAVIGATION BAR 
        =============================== -->
   <header class="navbar">
+    <a href="index.html">
     <img src="ImagesforMain/MentalWellnessLogo.png" alt="Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="Understand Your Feelings.html">Understand Your Feelings</a></li>
-        <li><a href="Advices and Experiences.html">Advice/Experiences</a></li>
-        <li><a href="Get Help.html">Get Help</a></li>
-      </ul>
-    </nav>
+    </a>
+    
+    <div id="menu-container">
+        <div id="menu-toggle" class="menu-toggle">☰</div>
+        
+        <ul id="menu" class="nav-menu">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="Understand Your Feelings.html">Understand Your Feelings</a></li>
+            <li><a href="Advices and Experiences.html" class="active">Advice/Experiences</a></li>
+            <li><a href="Get Help.html" >Get Help</a></li>
+        </ul>
+    </div>
   </header>
 
   <!-- ===============================
@@ -33,55 +38,50 @@
 
       <!-- LEFT SIDE: Carousel of images -->
       <div class="carousel">
-        <!-- Static placeholders for now -->
-        <button class="arrow left">⟵</button>
-        <div class="carousel-images">
-          <img src="images/advice1.jpg" alt="Advice image 1" class="active">
-          <img src="images/advice2.jpg" alt="Advice image 2">
-          <img src="images/advice3.jpg" alt="Advice image 3">
+        <div class="carousel-slide">
+          <img src="ImagesforMain/Advicepg3.png" alt="Advice image 1" class="active">
+          <img src="ImagesforMain/helpfulquotepg3.jpg" alt="Advice image 2">
+          <img src="ImagesforMain/adviceformentalhealthpg3.jpg" alt="Advice image 3">
         </div>
-        <button class="arrow right">⟶</button>
       </div>
 
       <!-- RIGHT SIDE: Summary text -->
       <div class="advice-summary">
         <h2>Advice & Experiences</h2>
-        <p>Insert a short summary here about the advice being shared. 
-        This could talk about learning from others' experiences, finding hope, 
-        and encouraging open conversations about mental wellbeing.</p>
-
-        <p>Keep this section empathetic, concise, and focused on inspiration or 
-        encouragement. NOTE: Replace it later with the real content.</p>
+                <h3>Why Stories Matter</h3>
+                <p>Sometimes, the hardest part of dealing with tough emotions is feeling like you’re the only one going through it. This page is here to change that. 
+                <br>Real talk: Your experience is valid, and you are not alone.</p>
+                <p>When students share their experiences—whether it's managing school stress, dealing with anxiety, or learning how to ask for help—it creates a powerful connection. Reading their short, anonymized stories can offer you a fresh perspective, practical tips that actually work, and the encouragement you need to take your own next steps toward feeling better.</p>        
       </div>
     </section>
 
     <hr>
 
     <!-- LOWER SECTION: Three experience cards -->
-    <section class="experience-grid">
+<section class="experience-grid">
+            
+            <h2 class="grid-heading">Student Experiences & Stories That Can Connect with You</h2>
 
-      <div class="experience-card">
-        <img src="images/person1.jpg" alt="Person 1 image">
-        <h3>Person 1 Name</h3>
-        <p>"Sharing my story helped me understand that I wasn’t alone. 
-           Talking to friends made a huge difference."</p>
-      </div>
+            <div class="experience-card">
+                <img src="ImagesforMain/anonymous girl pg3.png" alt="Anonymized student profile image 1">
+                <h3>Maya, 16 (on Overwhelm)</h3>
+                <p class="story-text">"My anxiety used to spike during exam week. I felt completely frozen. My breakthrough wasn't a magic cure, but a simple routine: 15 minutes of focusing on one subject, followed by a 5-minute stretching break. It felt less scary because I wasn't trying to do everything at once."</p>
+            </div>
 
-      <div class="experience-card">
-        <img src="images/person2.jpg" alt="Person 2 image">
-        <h3>Person 2 Name</h3>
-        <p>"Writing in a journal became my safe space. 
-           It allowed me to release emotions I couldn’t say out loud."</p>
-      </div>
+            <div class="experience-card">
+                <img src="ImagesforMain/anonymous pg3.png" alt="Anonymized student profile image 2">
+                <h3>Alex, 17 (on Finding Space)</h3>
+                <p class="story-text">"I always felt guilty about needing alone time. I thought I had to be 'on' for my friends 24/7. Now, I schedule one night a week to just listen to music or build something without any social pressure. It truly makes me a better friend the rest of the time."</p>
+            </div>
 
-      <div class="experience-card">
-        <img src="images/person3.jpg" alt="Person 3 image">
-        <h3>Person 3 Name</h3>
-        <p>"It took time, but reaching out for help was the best step I took. 
-           There’s always support available."</p>
-      </div>
-    </section>
-  </main>
+            <div class="experience-card">
+                <img src="ImagesforMain/anonymous pg3.png" alt="Anonymized student profile image 3">
+                <h3>Sam, 15 (on Getting Support)</h3>
+                <p class="story-text">"The scariest part was admitting I needed help. I thought everyone would judge me. I ended up just sending a text to my school counselor saying, 'Yeah, I need to talk to someone, anyone, and honestly I don't know why.' It was the hardest thing, but my life changed after that one text."</p>
+            </div>
+            
+        </section>  
+      </main>
 
   <!-- ===============================
        FOOTER (same across all pages)
@@ -90,6 +90,21 @@
     <p>Copyright © 2025 Mindful Wellbeing | All Rights Reserved</p>
   </footer>
 
+  <script src="main.js"></script> 
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+
+            function toggleMenu() {
+                menu.classList.toggle('active');
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
 </body>
 </html>

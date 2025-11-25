@@ -1,20 +1,26 @@
 /* ===============================
-   GLOBAL STYLES
-   =============================== */
+    GLOBAL STYLES (Cleaned for consistency)
+    =============================== */
 :root {
-  --primary: #1976d2;
-  --light: #f5f5f5;
-  --shadow: 0 4px 10px rgba(0,0,0,0.1);
-  --radius: 10px;
-  --text: #333;
-  --background: #e0edf3;
+    --primary: #1976d2;
+    --light: #f5f5f5;
+    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+    --radius: 10px;
+    --text: #333;
+    --background: #e0edf3;
+    --white: #fff;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--background);
-  color: var(--text);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h2, h3 {
+    color: var(--primary);
 }
 
 /* ===============================
@@ -59,6 +65,23 @@ body {
   color: black;
 }
 
+.menu-toggle {
+    display: none; 
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--color-primary, #1976D2); 
+    padding: 10px;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;  
+    gap: 20px;                 
+}
+
+
 /* ===============================
    MAIN CONTAINER
    =============================== */
@@ -91,74 +114,71 @@ body {
   box-shadow: var(--shadow);
 }
 
-.carousel-images img {
+.carousel-slide img {
   width: 100%;
   display: none;
   object-fit: cover;
 }
 
-.carousel-images img.active {
+.carousel-slide img.active {
   display: block;
 }
 
-/* Arrow buttons */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(25, 118, 210, 0.8);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 18px;
-}
-
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
-
-.arrow:hover {
-  background: black;
-}
-
-/* RIGHT: Summary Text */
+/* RIGHT: Summary Text (Why Stories Help) */
 .advice-summary {
-  flex: 1 1 400px;
+    flex: 1 1 400px;
+}
+.advice-summary h3 {
+    margin-top: 0;
 }
 
-.advice-summary h2 {
-  color: var(--primary);
-}
 
 /* ===============================
-   LOWER SECTION: Experience Cards
-   =============================== */
+    LOWER SECTION: Experience Cards (Student Mini Stories)
+    =============================== */
+.grid-heading {
+    color: var(--text);
+    width: 100%;
+    grid-column: 1 / -1; /* Make the heading span all columns */
+    text-align: center;
+    margin-bottom: 25px;
+}
+
 .experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min size for better text flow */
+    gap: 25px;
+    margin-top: 40px;
 }
 
 .experience-card {
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 20px;
-  text-align: center;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    text-align: left; /* Aligned left for easier reading of story text */
 }
 
 .experience-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: var(--radius);
+    width: 100px; /* Smaller, focused image for profile */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Center the image */
 }
 
 .experience-card h3 {
-  color: var(--primary);
-  margin-top: 10px;
+    color: var(--primary);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.story-text {
+    font-style: italic;
+    font-size: 0.95em;
 }
 
 /* ===============================
@@ -179,4 +199,38 @@ body {
   .advice-top {
     flex-direction: column;
   }
+   /* 1. Show the hamburger icon */
+    .menu-toggle {
+        display: block; 
+        order: 2; /* Pushes the icon to the right side if using flex */
+    }
+
+    /* 2. Style the menu list to act as a dropdown */
+    .nav-menu {
+        display: none !important; /* Hidden by default on small screens */
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        right: 0;
+        width: 100%;
+        background-color: var(--color-light, #F5F5F5); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    /* Show the menu when the 'active' class is added by JavaScript */
+    .nav-menu.active {
+        display: flex !important;
+    }
+    
+    .nav-menu li {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
 }

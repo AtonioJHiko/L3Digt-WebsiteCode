@@ -12,15 +12,20 @@
                 NAVIGATION BAR 
        =============================== -->
   <header class="navbar">
+    <a href="index.html">
     <img src="ImagesforMain/MentalWellnessLogo.png" alt="Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="Understand Your Feelings.html">Understand Your Feelings</a></li>
-        <li><a href="Advices and Experiences.html">Advice/Experiences</a></li>
-        <li><a href="Get Help.html">Get Help</a></li>
-      </ul>
-    </nav>
+    </a>
+    
+    <div id="menu-container">
+        <div id="menu-toggle" class="menu-toggle">☰</div>
+        
+        <ul id="menu" class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="Understand Your Feelings.html">Understand Your Feelings</a></li>
+            <li><a href="Advices and Experiences.html">Advice/Experiences</a></li>
+            <li><a href="Get Help.html" >Get Help</a></li>
+        </ul>
+    </div>
   </header>
 
   <!-- ===============================
@@ -89,7 +94,22 @@
       <p>© 2025 Mindful Wellbeing | A place for students, by students.</p>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js"></script> 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+
+            function toggleMenu() {
+                menu.classList.toggle('active');
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
 
 </body>
 </html>

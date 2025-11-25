@@ -51,6 +51,22 @@ body {
     color: black;
 }
 
+.menu-toggle {
+    display: none; 
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--color-primary, #1976D2); 
+    padding: 10px;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;  
+    gap: 20px;                 
+}
+
 /* ===============================
    Hero Section
 =============================== */
@@ -150,13 +166,43 @@ button.next { right: 10px; }
    Responsive Design
 =============================== */
 @media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-    }
     .card {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    /* 1. Show the hamburger icon */
+    .menu-toggle {
+        display: block; 
+        order: 2; /* Pushes the icon to the right side if using flex */
+    }
+
+    /* 2. Style the menu list to act as a dropdown */
+    .nav-menu {
+        display: none !important; /* Hidden by default on small screens */
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        right: 0;
+        width: 100%;
+        background-color: var(--color-light, #F5F5F5); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    /* Show the menu when the 'active' class is added by JavaScript */
+    .nav-menu.active {
+        display: flex !important;
+    }
+    
+    .nav-menu li {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
     }
 }

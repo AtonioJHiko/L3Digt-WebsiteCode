@@ -14,15 +14,20 @@
                 NAVIGATION BAR 
        =============================== -->
   <header class="navbar">
+    <a href="index.html">
     <img src="ImagesforMain/MentalWellnessLogo.png" alt="Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="Understand Your Feelings.html">Understand Your Feelings</a></li>
-        <li><a href="Advices and Experiences.html">Advice/Experiences</a></li>
-        <li><a href="Get Help.html">Get Help</a></li>
-      </ul>
-    </nav>
+    </a>
+    
+    <div id="menu-container">
+        <div id="menu-toggle" class="menu-toggle">☰</div>
+        
+        <ul id="menu" class="nav-menu">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="Understand Your Feelings.html" class="active">Understand Your Feelings</a></li>
+            <li><a href="Advices and Experiences.html">Advice/Experiences</a></li>
+            <li><a href="Get Help.html" >Get Help</a></li>
+        </ul>
+    </div>
   </header>
 
     <!-- ===============================
@@ -34,52 +39,94 @@
         <section class="intro-section">
             <div class="intro-text">
                 <h2>Understand Your Feelings</h2>
-                <p>Insert text here. This section could introduce the purpose of the page, 
-                such as exploring emotions, understanding mental health, or identifying early 
-                signs of stress and anxiety.</p>
-
-                <p>Keep this section short and empathetic. You can expand it later 
-                when you add your real content.</p>
+                <p>Welcome to the messy world of teenage emotions. When it comes to juggling school, your pals, relatives, or just trying to know yourself better - it’s can be heavy stuff. These pressures stir up intense reactions inside you, so this corner of the website wants to give you space. It helps you pause, breathe, then tune into your inner signals. Getting clear on your emotions helps guard your mind, and most especially when pressure builds up. See each feeling - like worry or irritation - as a message from inside. When you understand that message, you’re able to act wisely rather than react blindly. It’s this kind of insight that keeps you steady and self-assured, always preparing you no matter what comes your way.</p>
             </div>
 
-            <div class="intro-image">
-                <img src="images/placeholder.jpg" alt="Main section image">
-            </div>
+
+    <div class="intro-video">
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/1DmphC3Wozo?si=zCgIag4O10sTBxc_" 
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
         </section>
 
         <hr>
-
-        <!-- SECTION 2: 4 Image-Text Cards in Grid -->
-        <section class="card-grid">
-
-            <!-- Each card has an image and some text underneath -->
+        
+     <section class="card-grid" aria-labelledby="core-concepts">
+            <h2 id="core-concepts" class="visually-hidden">Core Concepts</h2>
+            
             <div class="card">
-                <img src="images/example1.jpg" alt="Emotion awareness image">
-                <h3>Recognize Your Emotions</h3>
-                <p>Learn to identify what you’re feeling and why. 
-                   Understanding emotions helps you respond instead of react.</p>
+                <img src="ImagesforMain/person think pg.2.jpg" alt="Illustration of someone pausing to reflect on their feelings.">
+                <div class="card-content">
+                    <h3>Recognize Your Emotions</h3>
+                    <p>Feeling down is normal, yet saying so won’t change a thing. Look inside yourself like you’re solving a puzzle. Could anger really be letdown wearing a mask? Maybe what seems like nerves is just energy buzzing differently.</p>
+                    <ul>
+                        <li><strong>Name it to tame it:</strong> Speaking your exact feeling aloud weakens its grip on you.</li>
+                        <li><strong>Build Vocabulary:</strong> Develop 
+                            <span class="tooltip-trigger">emotional granularity
+                                <span class="tooltip-content" role="tooltip">The ability to specifically name feelings (e.g., using "frustrated" or "lonely" instead of just "upset").</span>
+                            </span>. The more precise you are, the better you can solve the problem.
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="card">
-                <img src="images/example2.jpg" alt="Stress awareness image">
-                <h3>Dealing with Stress</h3>
-                <p>Simple ways to manage tension — through breathing, journaling, 
-                   or reaching out to someone you trust.</p>
+                <img src="ImagesforMain/man breathing pg2.jpg" alt="Illustration showing a method of calming down, like deep breathing.">
+                <div class="card-content">
+                    <h3>Dealing with Stress</h3>
+                    <p>Stress is your body's natural alarm system, but sometimes it gets stuck in the "on" position. When pressure from school or drama builds up, you need physical ways to reset that alarm.</p>
+                    <ul>
+                        <li><strong>Physical Reset:</strong> Try box breathing (inhale for 4, hold for 4, exhale for 4, hold for 4).</li>
+                        <li><strong>Get Grounded:</strong> If you feel spiral-y, use a 
+                            <span class="tooltip-trigger">grounding technique
+                                <span class="tooltip-content" role="tooltip">A quick mental exercise to pull you out of a spiral and back to the present moment, like naming 5 blue things you can see right now.</span>
+                            </span> to snap back to reality.
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="card">
-                <img src="images/example3.jpg" alt="Communication image">
-                <h3>Talking About It</h3>
-                <p>It’s okay to talk about how you feel. Sharing helps lighten the weight 
-                   and builds connection with others.</p>
+                <img src="ImagesforMain/friends conversing.jpg" alt="Illustration of two friends having a supportive conversation.">
+                <div class="card-content">
+                    <h3>Talking About It</h3>
+                    <p>Keeping everything bottled up is exhausting. It feels risky to open up, but sharing your load with someone who "gets it" is one of the fastest ways to feel lighter.</p>
+                    <ul>
+                        <li><strong>Find Your Person:</strong> It doesn't have to be everyone. Find one trusted friend or adult who listens without immediately trying to "fix" you.</li>
+                        <li><strong>It's Okay to Feel Weird After:</strong> Opening up can lead to a 
+                            <span class="tooltip-trigger">vulnerability hangover
+                                <span class="tooltip-content" role="tooltip">That awkward, exposed feeling you get after sharing something personal. It's totally normal and usually means you were brave.</span>
+                            </span>. Don't let it stop you from sharing again.
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="card">
-                <img src="images/example4.jpg" alt="Self-care image">
-                <h3>Finding Calm</h3>
-                <p>Explore healthy ways to unwind — like music, mindfulness, or nature walks.</p>
+                <img src="ImagesforMain/music and nature.jpg" alt="Illustration of someone engaging in a peaceful hobby like listening to music in nature.">
+                <div class="card-content">
+                    <h3>Finding Calm</h3>
+                    <p>Scrolling uncontrollably isn't relaxing—it's numbing. True recharging means actively doing things that refill your energy tank, not just drain it faster.</p>
+                    <ul>
+                        <li><strong>Unplug to Recharge:</strong> Step away from the screens. Nature walks or even just sitting outside can lower blood pressure quickly.</li>
+                        <li><strong>Practice Presence:</strong> Try practicing 
+                            <span class="tooltip-trigger">mindfulness
+                                <span class="tooltip-content" role="tooltip">Paying full attention to what you are doing right now—like the taste of your food or the feeling of the chair beneath you—without judgement.</span>
+                            </span> during everyday activities.
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
+
     </main>
 
     <!-- ===============================
@@ -89,6 +136,22 @@
         <p>Copyright © 2025 Mindful Wellbeing | All Rights Reserved</p>
     </footer>
 
+    <script src="main.js"></script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+
+            function toggleMenu() {
+                menu.classList.toggle('active');
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
 
 </body>
 </html>

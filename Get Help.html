@@ -1,96 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get Help</title>
-  <link rel="stylesheet" href="Get Help.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Help | Mindful Wellbeing</title>
+    <link rel="stylesheet" href="Get Help.css">
 </head>
 <body>
 
-  <!-- ===============================
-                NAVIGATION BAR 
-       =============================== -->
   <header class="navbar">
+    <a href="index.html">
     <img src="ImagesforMain/MentalWellnessLogo.png" alt="Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="Understand Your Feelings.html">Understand Your Feelings</a></li>
-        <li><a href="Advices and Experiences.html">Advice/Experiences</a></li>
-        <li><a href="Get Help.html">Get Help</a></li>
-      </ul>
-    </nav>
+    </a>
+    
+    <div id="menu-container">
+        <div id="menu-toggle" class="menu-toggle">☰</div>
+        
+        <ul id="menu" class="nav-menu">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="Understand Your Feelings.html">Understand Your Feelings</a></li>
+            <li><a href="Advices and Experiences.html">Advice/Experiences</a></li>
+            <li><a href="Get Help.html" class="active">Get Help</a></li>
+        </ul>
+    </div>
   </header>
 
-  <!-- ===============================
-       MAIN CONTENT SECTION
-       =============================== -->
-  <main class="container">
+    <main class="container">
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-      <div class="hero-text">
-        <h2>Get Help Here</h2>
-        <p>Feeling overwhelmed or unsure where to start? This page lists helpful support 
-           services and resources available to students. Whether you’re struggling with 
-           stress, anxiety, or just need someone to talk to, these organizations can help. ADD MORE INFO </p>
-      </div>
-      <!-- Background image is handled in CSS -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h2>Asking for Help is a Superpower</h2>
+                <p>Finding things tough right now? You’re not alone. Reaching out doesn’t mean you’re falling apart - more like stepping up. It shows you care about yourself. If you need quick help or just want to talk, these tools have got your back any time, day or night.</p>
+            </div>
+            </section>
+
+        <hr>
+
+    <section class="emergency-section" aria-labelledby="emergency-heading">
+        <div class="emergency-content-wrapper"> 
+            <h3 id="emergency-heading" class="section-title">Need to Talk Right Now? (24/7 Support)</h3>
+
+            <div class="emergency-boxes-container"> 
+                <div class="emergency-box lifeline">
+                    <h4>Lifeline Aotearoa</h4>
+                    <p>Free and confidential crisis support. For any difficult moment.</p>
+                    <a href="tel:0800543354" class="help-button">Call: 0800 543 354</a>
+                </div>
+
+                <div class="emergency-box youthline">
+                    <h4>Youthline</h4>
+                    <p>Free, confidential, and non-judgmental support for young people.</p>
+                    <a href="tel:0800376633" class="help-button">Call: 0800 376 633</a>
+                    <a href="sms:234" class="help-button text-btn">Text: 234</a>
+                </div>
+
+                <div class="emergency-box three-seven">
+                    <h4>1737 - Need to Talk?</h4>
+                    <p>Free call or text with a trained counsellor 24/7. It's free and private.</p>
+                    <a href="tel:1737" class="help-button">Call or Text: 1737</a>
+                </div>
+            </div>
+        </div>
     </section>
+        <hr>
 
-    <hr>
+        <section class="school-support" aria-labelledby="school-heading">
+            <h3 id="school-heading" class="section-title">Support Right Here at School 🏫</h3>
+            
+            <div class="support-detail counselor-info">
+                <h4>School Counsellors</h4>
+                <p>Your counselor’s a private, skilled person who knows how to help. They’ll hear you out - no matter what - whether it’s pressure, home stuff, worry, or goals ahead. To reach out, just shoot a short message: "Can we set up a quick 15-min talk? I’ve been stressed lately."</p>
+            </div>
 
-    <!-- SUPPORT CATEGORIES SECTION -->
-    <section class="support-section">
+            <div class="support-detail nurse-info">
+                <h4>School Nurse / Health Team</h4>
+                <p>The nurse helps when your emotions turn into body issues - like headaches, no sleep, or constant tiredness. Since they see how feelings affect health, they’ll suggest real steps that fit your situation. Try saying this: “Lately I’ve had tension in my head and can’t rest well at night… maybe from pressure. Is now a good time to chat?”</p>
+            </div>
+            
+            <div class="support-detail adult-info">
+                <h4>Trusted Adults (Teachers, Deans, Coaches)</h4>
+                <p>A safe grown-up’s just someone you get along with easily. Not necessarily a therapist - still, they could give real help or just hear you out. When asking, pick a calm moment and keep it light: “Things’ve been tough now and then… think you’d have a few minutes to chat?”</p>
+            </div>
 
-      <!-- CATEGORY 1 -->
-      <div class="support-row">
-        <div class="support-text">
-          <h3>School Counselling Support</h3>
-          <p>Learn how your school counsellors can provide a safe and confidential space 
-             to talk about what’s on your mind. They can guide you to professional help 
-             if needed. ADD MORE INFO </p>
-        </div>
-        <div class="support-icon">
-          <img src="images/counselling-icon.png" alt="Counselling Icon">
-        </div>
-      </div>
+        </section>
 
-      <!-- CATEGORY 2 -->
-      <div class="support-row">
-        <div class="support-text">
-          <h3>Online & Phone Helplines</h3>
-          <p>Contact free and confidential services like Youthline, Lifeline, and 1737. 
-             They offer trained counsellors who listen and support you 24/7. ADD MORE INFO</p>
-        </div>
-        <div class="support-icon">
-          <img src="images/helpline-icon.png" alt="Helpline Icon">
-        </div>
-      </div>
+        <section class="encouragement-footer">
+            <p>Remember: You matter - putting in the work counts. Looking after your thoughts matters just like looking after your physical health does. Staying safe and keeping things personal? That’s key. Every expert or support line here knows how to protect your details, except if there's a real-time threat to you or others.</p>
+        </section>
+        
+    </main>
 
-      <!-- CATEGORY 3 -->
-      <div class="support-row">
-        <div class="support-text">
-          <h3>Community Support</h3>
-          <p>Find community groups, mental wellbeing programs, and peer-led support 
-             initiatives that help you connect with others and share experiences. ADD MORE INFO</p>
-        </div>
-        <div class="support-icon">
-          <img src="images/community-icon.png" alt="Community Icon">
-        </div>
-      </div>
+    <footer class="footer">
+        <p>Copyright © 2025 Mindful Wellbeing | All Rights Reserved</p>
+    </footer>
 
-    </section>
-  </main>
+  <script src="main.js"></script> 
 
-  <!-- ===============================
-       FOOTER (same as homepage)
-       =============================== -->
-  <footer class="footer">
-    <p>Copyright © 2025 Mindful Wellbeing | All Rights Reserved</p>
-  </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
 
+            function toggleMenu() {
+                menu.classList.toggle('active');
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
 
 </body>
 </html>
