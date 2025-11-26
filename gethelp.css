@@ -1,16 +1,10 @@
-/* ===============================
-    GLOBAL STYLES 
-    =============================== */
+/* GLOBAL STYLES */
 :root {
-    /* Primary Colour (Text/Headings) */
-    --color-primary: #1976D2; 
-    /* Secondary / Background colour */
-    --color-background: #E0EDF3; 
-    /* Navbar colour */
-    --color-light: #F5F5F5; 
-    /* Text colour */
-    --color-text: #333333; 
-    
+    --color-primary: #4A4A4A;
+    --color-background: #F5F6F7;
+    --color-light: #F5F6F7;
+    --color-text: #2D3748;
+
     --shadow-default: 0 4px 10px rgba(0,0,0,0.1);
     --border-radius: 10px;
 
@@ -40,9 +34,7 @@ h2, h3 {
     font-size: 1.8em;
 }
 
-/* ===============================
-    NAVBAR
-    =============================== */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -86,7 +78,7 @@ h2, h3 {
     display: none; 
     font-size: 2em;
     cursor: pointer;
-    color: var(--color-primary, #1976D2); 
+    color: var(--primary); 
     padding: 10px;
 }
 
@@ -98,24 +90,19 @@ h2, h3 {
     gap: 20px;                 
 }
 
-/* ===============================
-    MAIN CONTAINER
-    =============================== */
+/* MAIN CONTAINER */
 .container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
 }
 
-/* ===============================
-    SECTION 1: HERO (Intro Message)
-    =============================== */
+/* SECTION 1: HERO */
 .hero-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Placeholder image for a background of comfort/hope */
-    background-image: url('ImagesforMain/comfortandhope.jpg'); 
+    background-image: url('ImagesforMain/comfortandhope.jpg');
     background-size: cover;
     background-position: top;
     border-radius: var(--radius);
@@ -126,23 +113,20 @@ h2, h3 {
 }
 
 .hero-text {
-    background: rgba(0, 0, 0, 0.65); /* Darker overlay for better text contrast */
+    background: rgba(0, 0, 0, 0.65);
     padding: 25px;
     border-radius: var(--radius);
     max-width: 650px;
 }
 
 .hero-text h2 {
-    color: #fff; /* White title for contrast */
+    color: #fff;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     font-size: 2.5em;
     margin-top: 0;
 }
 
-/* ===============================
-    SECTION 2: EMERGENCY HELP BOXES 
-    =============================== */
-
+/* SECTION 2: EMERGENCY HELP BOXES */
 .emergency-content-wrapper {
     max-width: 1100px;
     margin: 40px auto;
@@ -171,7 +155,7 @@ h2, h3 {
 }
 
 .emergency-box {
-    background: var(--color-primary);
+    background: var(--primary);
     color: white;
     padding: 25px;
     border-radius: var(--radius);
@@ -180,7 +164,6 @@ h2, h3 {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-bottom: 0;
 }
 
 .emergency-box h4 {
@@ -209,15 +192,13 @@ h2, h3 {
 
 .help-button:hover {
     background: white;
-    color: var(--color-primary);
-    border-color: white;
+    color: var(--primary);
 }
 
 .help-button.text-btn {
     margin-top: 10px;
 }
 
-/* Responsive Adjustment: Stacks everything on small screens */
 @media (max-width: 768px) {
     .emergency-content-wrapper {
         grid-template-columns: 1fr;
@@ -233,9 +214,7 @@ h2, h3 {
     }
 }
 
-/* ===============================
-    SECTION 3: SCHOOL SUPPORT
-    =============================== */
+/* SECTION 3: SCHOOL SUPPORT */
 .school-support {
     display: flex;
     flex-direction: column;
@@ -245,23 +224,21 @@ h2, h3 {
 
 .support-detail {
     background: white;
-    border-left: 5px solid var(--color-primary);
+    border-left: 5px solid var(--primary);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 20px;
 }
 
 .support-detail h4 {
-    color: var(--color-primary);
+    color: var(--primary);
     margin-top: 0;
     font-size: 1.3em;
 }
 
-/* ===============================
-    SECTION 4: ENCOURAGEMENT MESSAGE
-    =============================== */
+/* SECTION 4: ENCOURAGEMENT MESSAGE */
 .encouragement-footer {
-    background: var(--color-primary);
+    background: var(--primary);
     color: white;
     padding: 30px;
     text-align: center;
@@ -271,10 +248,7 @@ h2, h3 {
     font-weight: 500;
 }
 
-
-/* ===============================
-    FOOTER 
-    =============================== */
+/* FOOTER */
 .footer {
     text-align: center;
     padding: 15px;
@@ -283,9 +257,7 @@ h2, h3 {
     box-shadow: var(--shadow);
 }
 
-/* ===============================
-    RESPONSIVE DESIGN
-    =============================== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .hero-text {
         max-width: 100%;
@@ -297,31 +269,28 @@ h2, h3 {
         padding: 40px 20px;
     }
 
-    /* Stack emergency boxes vertically */
     .emergency-grid {
         grid-template-columns: 1fr;
     }
-     /* 1. Show the hamburger icon */
+
     .menu-toggle {
         display: block; 
-        order: 2; /* Pushes the icon to the right side if using flex */
+        order: 2;
     }
 
-    /* 2. Style the menu list to act as a dropdown */
     .nav-menu {
-        display: none !important; /* Hidden by default on small screens */
+        display: none !important;
         position: absolute;
-        top: 60px; /* Adjust based on your navbar height */
+        top: 60px;
         right: 0;
         width: 100%;
-        background-color: var(--color-light, #F5F5F5); 
+        background-color: var(--light);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         flex-direction: column;
         z-index: 1000;
         padding: 10px 0;
     }
 
-    /* Show the menu when the 'active' class is added by JavaScript */
     .nav-menu.active {
         display: flex !important;
     }
