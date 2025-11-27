@@ -1,5 +1,5 @@
 /* ===============================
-   Global Styling
+   Global Styling 
 =============================== */
 :root {
     --primary: #4A4A4A;
@@ -86,20 +86,33 @@ body {
    Carousel
 =============================== */
 .carousel-container {
+    background-color: white;
     position: relative;
     max-width: 1000px;
-    max-height: 500px;
+    height: 450px;  
     margin: 30px auto;
     overflow: hidden;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-slide img {
-    display: none;
-    width: 100%;
-    object-fit: cover;
-    transition: opacity 0.5s ease-in-out;
+    display: block;
+    margin: 0 auto;
+    width: 50%;          
+    height: 100%;             
+    object-fit: cover;          
+    object-position: center; 
+    transition: opacity 0.4s ease-in-out;
+    border-radius: var(--radius);
+}
+
+.carousel-slide img.active {
+    display: block;
+    opacity: 1;
 }
 
 button.prev, button.next {
@@ -184,7 +197,7 @@ button.next { right: 10px; }
         top: 60px; /* Adjust based on your navbar height */
         right: 0;
         width: 100%;
-        background-color: var(--color-light, #F0FCF9); 
+        background-color: var(--light); 
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         flex-direction: column;
         z-index: 1000;
