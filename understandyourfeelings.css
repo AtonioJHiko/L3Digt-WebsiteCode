@@ -141,7 +141,6 @@ h2 {
     flex: 1 1 400px;
 }
 
-/* Wrapper to make YouTube iframe responsive */
 .video-wrapper {
     position: relative;
     width: 100%;
@@ -149,7 +148,7 @@ h2 {
     height: 0;
 }
 
-.video-wrapper iframe {
+.video-wrapper  {
     position: absolute;
     top: 0;
     left: 0;
@@ -342,4 +341,38 @@ h2 {
     .nav-menu li:last-child {
         border-bottom: none;
     }
+/* ===============================
+ YOUTUBE THUMBNAIL CARD 
+=============================== */
+
+.video-card {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.video-thumb {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.watch-btn {
+    display: inline-block;
+    background: #4A4A4A;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.watch-btn:hover {
+    background: #2D3748;
+}
 }
