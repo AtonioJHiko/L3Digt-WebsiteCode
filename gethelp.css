@@ -248,13 +248,50 @@ h2, h3 {
     font-weight: 500;
 }
 
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+#backToTop.show {
+    opacity: 0.9;
+    pointer-events: auto;
+}
+
+#backToTop:hover {
+    opacity: 1;
+    background-color: #000;
+}
+
 /* FOOTER */
-.footer {
+.site-footer {
     text-align: center;
-    padding: 15px;
-    background: var(--light);
+    padding: 20px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 14px;
     margin-top: 40px;
-    box-shadow: var(--shadow);
+}
+
+.site-footer p {
+    margin: 5px 0;
 }
 
 /* RESPONSIVE DESIGN */
