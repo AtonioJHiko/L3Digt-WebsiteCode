@@ -51,14 +51,37 @@ body {
     padding: 0;
 }
 
+/* Navbar links */
 .navbar a {
+    position: relative;
     text-decoration: none;
     color: var(--primary);
     font-weight: bold;
-    transition: color 0.3s;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
 }
 
-.navbar a:hover, .navbar a.active {
+/* Strong underline on hover & active */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;               /* <-- thickness of underline */
+    background-color: black;   /* <-- color of underline */
+    transition: width 0.3s ease;
+}
+
+/* Hover underline grows */
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+/* Keep link text turning black on hover */
+.navbar a:hover,
+.navbar a.active {
     color: black;
 }
 

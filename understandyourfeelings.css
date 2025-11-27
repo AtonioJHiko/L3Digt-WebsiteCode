@@ -85,10 +85,28 @@ h2 {
 }
 
 .navbar a {
+    position: relative;
     text-decoration: none;
     color: var(--primary);
     font-weight: bold;
-    transition: color 0.2s ease;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;               
+    background-color: black;   
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
 }
 
 .navbar a:hover,
